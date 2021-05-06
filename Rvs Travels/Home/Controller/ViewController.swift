@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MessageUI
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate , MFMailComposeViewControllerDelegate {
    
     @IBOutlet weak var tableTravel: UITableView!
     @IBOutlet weak var viewHotels:  UIView!
     @IBOutlet weak var viewPackets: UIView!
+    
     
     let listTravels: [Travel] = TravelDAO().returnAllTravels()
 
@@ -29,7 +31,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.viewHotels.layer.cornerRadius  = 10
         self.viewPackets.layer.cornerRadius = 10
     }
-
+    
+    @IBAction func faleconoscoButton(_ sender: Any) {
+        let mailViewControler = MFMailComposeViewController()
+        mailViewControler.mailComposeDelegate = self
+        mailViewControler.setToRecipients(["vierrra@hotmail.com"])
+        
+        self.present(mailViewControler, animated: true)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return listTravels.count
