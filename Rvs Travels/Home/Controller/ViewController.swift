@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.viewPackets.layer.cornerRadius = 10
     }
     
-    @IBAction func faleconoscoButton(_ sender: Any) {
+    @IBAction func contactUs(_ sender: Any) {
         let mailViewControler = MFMailComposeViewController()
         mailViewControler.mailComposeDelegate = self
         mailViewControler.setToRecipients(["vierrra@hotmail.com"])
