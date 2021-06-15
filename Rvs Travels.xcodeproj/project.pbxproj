@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,9 +39,18 @@
 		8846DD40258BD2CB003D68AC /* icon_hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846DD2F258BD2CB003D68AC /* icon_hotel.png */; };
 		8846DDAC258C4214003D68AC /* ConfirmPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8846DDAB258C4214003D68AC /* ConfirmPayViewController.swift */; };
 		886DFBFE24C528F7007813B2 /* TravelDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886DFBFD24C528F7007813B2 /* TravelDAO.swift */; };
+		887EDDD926780E4A001951C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 887EDDD826780E4A001951C2 /* GoogleService-Info.plist */; };
+		887EDDDC26781CE2001951C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EDDDB26781CE2001951C2 /* HomeViewController.swift */; };
+		887EDDDF26782C04001951C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EDDDE26782C04001951C2 /* LoginViewController.swift */; };
+		887EDDE126782DDA001951C2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EDDE026782DDA001951C2 /* Alert.swift */; };
+		887EDDE4267832DD001951C2 /* UserAccountCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EDDE3267832DD001951C2 /* UserAccountCreateViewController.swift */; };
+		D307FC39201B33E0C6EB189C /* Pods_Rvs_Travels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6337EB37C0ED812061D5CD1D /* Pods_Rvs_Travels.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DB89EAC177193979B9F6DFC /* Pods-Rvs Travels.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rvs Travels.release.xcconfig"; path = "Target Support Files/Pods-Rvs Travels/Pods-Rvs Travels.release.xcconfig"; sourceTree = "<group>"; };
+		45CD89E7C495BC5139303DA3 /* Pods-Rvs Travels.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rvs Travels.debug.xcconfig"; path = "Target Support Files/Pods-Rvs Travels/Pods-Rvs Travels.debug.xcconfig"; sourceTree = "<group>"; };
+		6337EB37C0ED812061D5CD1D /* Pods_Rvs_Travels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rvs_Travels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		882364F024CD26D400BBFBE3 /* PacketsTravelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketsTravelsViewController.swift; sourceTree = "<group>"; };
 		882364F224CD298A00BBFBE3 /* PacketsTravelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketsTravelsCollectionViewCell.swift; sourceTree = "<group>"; };
 		882CFF8424341030007ADD48 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -76,6 +85,11 @@
 		8846DD2F258BD2CB003D68AC /* icon_hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hotel.png; sourceTree = "<group>"; };
 		8846DDAB258C4214003D68AC /* ConfirmPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPayViewController.swift; sourceTree = "<group>"; };
 		886DFBFD24C528F7007813B2 /* TravelDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelDAO.swift; sourceTree = "<group>"; };
+		887EDDD826780E4A001951C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		887EDDDB26781CE2001951C2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		887EDDDE26782C04001951C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		887EDDE026782DDA001951C2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		887EDDE3267832DD001951C2 /* UserAccountCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountCreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D307FC39201B33E0C6EB189C /* Pods_Rvs_Travels.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,17 +134,18 @@
 			children = (
 				883626632433984400A886BE /* Travel.swift */,
 				8846DD16258BC82B003D68AC /* PacketTravel.swift */,
+				887EDDE026782DDA001951C2 /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		882CFF9224341A09007ADD48 /* Home */ = {
+		882CFF9224341A09007ADD48 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				882CFF9424341A6F007ADD48 /* Views */,
 				882CFF9324341A65007ADD48 /* Controller */,
 			);
-			path = Home;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		882CFF9324341A65007ADD48 /* Controller */ = {
@@ -162,6 +178,8 @@
 			children = (
 				883ADBE52432DE8C00308AC8 /* Rvs Travels */,
 				883ADBE42432DE8C00308AC8 /* Products */,
+				BFC8EA2B0456E7EAB45A1726 /* Pods */,
+				A3121E157F6AB3F0C5123642 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,10 +194,13 @@
 		883ADBE52432DE8C00308AC8 /* Rvs Travels */ = {
 			isa = PBXGroup;
 			children = (
+				887EDDE22678325F001951C2 /* UserAccountCreate */,
+				887EDDDD26782BF2001951C2 /* Login */,
+				887EDDDA26781CCB001951C2 /* Home */,
 				8846DDA4258C40FA003D68AC /* ConfirmPay */,
 				883ADBE62432DE8C00308AC8 /* AppDelegate.swift */,
 				882CFF91243419F5007ADD48 /* Model */,
-				882CFF9224341A09007ADD48 /* Home */,
+				882CFF9224341A09007ADD48 /* Main */,
 				882364ED24CD260F00BBFBE3 /* Packets */,
 				8846DD10258BAB91003D68AC /* DetailTravel */,
 				882CFF9524341A86007ADD48 /* TravelDao */,
@@ -189,6 +210,7 @@
 				883ADBEF2432DE9100308AC8 /* Assets.xcassets */,
 				883ADBF12432DE9100308AC8 /* LaunchScreen.storyboard */,
 				883ADBF42432DE9100308AC8 /* Info.plist */,
+				887EDDD826780E4A001951C2 /* GoogleService-Info.plist */,
 			);
 			path = "Rvs Travels";
 			sourceTree = "<group>";
@@ -257,6 +279,47 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		887EDDDA26781CCB001951C2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				887EDDDB26781CE2001951C2 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		887EDDDD26782BF2001951C2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				887EDDDE26782C04001951C2 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		887EDDE22678325F001951C2 /* UserAccountCreate */ = {
+			isa = PBXGroup;
+			children = (
+				887EDDE3267832DD001951C2 /* UserAccountCreateViewController.swift */,
+			);
+			path = UserAccountCreate;
+			sourceTree = "<group>";
+		};
+		A3121E157F6AB3F0C5123642 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6337EB37C0ED812061D5CD1D /* Pods_Rvs_Travels.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFC8EA2B0456E7EAB45A1726 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45CD89E7C495BC5139303DA3 /* Pods-Rvs Travels.debug.xcconfig */,
+				3DB89EAC177193979B9F6DFC /* Pods-Rvs Travels.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,9 +327,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 883ADBF72432DE9100308AC8 /* Build configuration list for PBXNativeTarget "Rvs Travels" */;
 			buildPhases = (
+				3D37226DD14EC24509CBB401 /* [CP] Check Pods Manifest.lock */,
 				883ADBDF2432DE8C00308AC8 /* Sources */,
 				883ADBE02432DE8C00308AC8 /* Frameworks */,
 				883ADBE12432DE8C00308AC8 /* Resources */,
+				90A120A820BD01E857BC0821 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,18 +400,63 @@
 				8846DD40258BD2CB003D68AC /* icon_hotel.png in Resources */,
 				8846DD33258BD2CB003D68AC /* img9.jpg in Resources */,
 				8846DD3E258BD2CB003D68AC /* img11.jpg in Resources */,
+				887EDDD926780E4A001951C2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D37226DD14EC24509CBB401 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rvs Travels-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90A120A820BD01E857BC0821 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rvs Travels/Pods-Rvs Travels-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rvs Travels/Pods-Rvs Travels-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rvs Travels/Pods-Rvs Travels-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		883ADBDF2432DE8C00308AC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887EDDDF26782C04001951C2 /* LoginViewController.swift in Sources */,
 				883ADBEB2432DE8C00308AC8 /* ViewController.swift in Sources */,
 				8846DD17258BC82B003D68AC /* PacketTravel.swift in Sources */,
+				887EDDE126782DDA001951C2 /* Alert.swift in Sources */,
 				883626642433984400A886BE /* Travel.swift in Sources */,
 				886DFBFE24C528F7007813B2 /* TravelDAO.swift in Sources */,
 				882CFF8524341030007ADD48 /* TableViewCell.swift in Sources */,
@@ -356,7 +466,9 @@
 				8846DDAC258C4214003D68AC /* ConfirmPayViewController.swift in Sources */,
 				8846DD1C258BD2A1003D68AC /* PacketTravelDAO.swift in Sources */,
 				883ADBE72432DE8C00308AC8 /* AppDelegate.swift in Sources */,
+				887EDDDC26781CE2001951C2 /* HomeViewController.swift in Sources */,
 				883ADBE92432DE8C00308AC8 /* SceneDelegate.swift in Sources */,
+				887EDDE4267832DD001951C2 /* UserAccountCreateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +610,7 @@
 		};
 		883ADBF82432DE9100308AC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45CD89E7C495BC5139303DA3 /* Pods-Rvs Travels.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -517,6 +630,7 @@
 		};
 		883ADBF92432DE9100308AC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DB89EAC177193979B9F6DFC /* Pods-Rvs Travels.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
