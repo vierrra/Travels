@@ -25,6 +25,7 @@ class DetailTravelViewController: UIViewController {
         
         showScreenDetail()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func showScreenDetail() {

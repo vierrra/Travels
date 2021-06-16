@@ -7,22 +7,25 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
-    
     @IBOutlet weak var enterButton:    UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var proceedButton:  UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         configureEnterButton()
         configureRegisterButton()
         configureProceedButton()
+        checkIfUserLogIn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func configureEnterButton() {
@@ -38,5 +41,12 @@ class HomeViewController: UIViewController {
     func configureProceedButton() {
         proceedButton.layer.cornerRadius = 10
         proceedButton.layer.borderWidth  = 1
+    }
+    
+    func checkIfUserLogIn() {
+        let checkUserLogin = CheckIfUserLogIn(controller: self)
+        let segue          = "loginAutomaticSegue"
+
+        checkUserLogin.checkIfUserLogInWithSegue(segue)
     }
 }

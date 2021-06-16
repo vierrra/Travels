@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PacketsTravelsViewController: UIViewController {
     
@@ -20,6 +21,7 @@ class PacketsTravelsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionViewPacketsTravels.dataSource = self
         collectionViewPacketsTravels.delegate   = self
         searchTravels.delegate                  = self
@@ -28,10 +30,14 @@ class PacketsTravelsViewController: UIViewController {
         self.countPacketsLabel.text = self.updateCountPackets()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    
     func updateCountPackets() -> String {
         return travelsList.count == 1 ? "1 pacote encontrado" : "\(travelsList.count) pacotes encontrados"
     }
-
 }
 
 extension PacketsTravelsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -70,8 +76,14 @@ extension PacketsTravelsViewController: UICollectionViewDataSource, UICollection
         let viewController = storyboard.instantiateViewController(withIdentifier: "detail") as! DetailTravelViewController
         let packet = travelsList[indexPath.item]
         
-        viewController.selectionPacket = packet
-        self.navigationController?.pushViewController(viewController, animated: true)
+        Auth.auth().addStateDidChangeListener({(auth, user) in
+            if user != nil {
+                viewController.selectionPacket = packet
+                self.navigationController?.pushViewController(viewController, animated: true)
+            } else {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        })
     }
 }
 

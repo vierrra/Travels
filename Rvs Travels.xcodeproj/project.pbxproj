@@ -38,6 +38,8 @@
 		8846DD3F258BD2CB003D68AC /* img10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8846DD2E258BD2CB003D68AC /* img10.jpg */; };
 		8846DD40258BD2CB003D68AC /* icon_hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846DD2F258BD2CB003D68AC /* icon_hotel.png */; };
 		8846DDAC258C4214003D68AC /* ConfirmPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8846DDAB258C4214003D68AC /* ConfirmPayViewController.swift */; };
+		884CAB0426794E9F0043825B /* CheckIfUserLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884CAB0326794E9F0043825B /* CheckIfUserLogIn.swift */; };
+		884CAB062679B2E20043825B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884CAB052679B2E20043825B /* User.swift */; };
 		886DFBFE24C528F7007813B2 /* TravelDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886DFBFD24C528F7007813B2 /* TravelDAO.swift */; };
 		887EDDD926780E4A001951C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 887EDDD826780E4A001951C2 /* GoogleService-Info.plist */; };
 		887EDDDC26781CE2001951C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EDDDB26781CE2001951C2 /* HomeViewController.swift */; };
@@ -84,6 +86,8 @@
 		8846DD2E258BD2CB003D68AC /* img10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img10.jpg; sourceTree = "<group>"; };
 		8846DD2F258BD2CB003D68AC /* icon_hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hotel.png; sourceTree = "<group>"; };
 		8846DDAB258C4214003D68AC /* ConfirmPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPayViewController.swift; sourceTree = "<group>"; };
+		884CAB0326794E9F0043825B /* CheckIfUserLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIfUserLogIn.swift; sourceTree = "<group>"; };
+		884CAB052679B2E20043825B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		886DFBFD24C528F7007813B2 /* TravelDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelDAO.swift; sourceTree = "<group>"; };
 		887EDDD826780E4A001951C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		887EDDDB26781CE2001951C2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		882364ED24CD260F00BBFBE3 /* Packets */ = {
 			isa = PBXGroup;
 			children = (
+				883ADBE82432DE8C00308AC8 /* SceneDelegate.swift */,
 				882364EF24CD265300BBFBE3 /* View */,
 				882364EE24CD264700BBFBE3 /* Controller */,
 			);
@@ -129,14 +134,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		882CFF91243419F5007ADD48 /* Model */ = {
+		882CFF91243419F5007ADD48 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				883626632433984400A886BE /* Travel.swift */,
 				8846DD16258BC82B003D68AC /* PacketTravel.swift */,
 				887EDDE026782DDA001951C2 /* Alert.swift */,
+				884CAB0326794E9F0043825B /* CheckIfUserLogIn.swift */,
+				884CAB052679B2E20043825B /* User.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		882CFF9224341A09007ADD48 /* Main */ = {
@@ -194,17 +201,16 @@
 		883ADBE52432DE8C00308AC8 /* Rvs Travels */ = {
 			isa = PBXGroup;
 			children = (
+				883ADBE62432DE8C00308AC8 /* AppDelegate.swift */,
 				887EDDE22678325F001951C2 /* UserAccountCreate */,
 				887EDDDD26782BF2001951C2 /* Login */,
 				887EDDDA26781CCB001951C2 /* Home */,
 				8846DDA4258C40FA003D68AC /* ConfirmPay */,
-				883ADBE62432DE8C00308AC8 /* AppDelegate.swift */,
-				882CFF91243419F5007ADD48 /* Model */,
+				882CFF91243419F5007ADD48 /* Models */,
 				882CFF9224341A09007ADD48 /* Main */,
 				882364ED24CD260F00BBFBE3 /* Packets */,
 				8846DD10258BAB91003D68AC /* DetailTravel */,
 				882CFF9524341A86007ADD48 /* TravelDao */,
-				883ADBE82432DE8C00308AC8 /* SceneDelegate.swift */,
 				883ADBEC2432DE8C00308AC8 /* Main.storyboard */,
 				8846DD1E258BD2CB003D68AC /* Assets */,
 				883ADBEF2432DE9100308AC8 /* Assets.xcassets */,
@@ -467,7 +473,9 @@
 				8846DD1C258BD2A1003D68AC /* PacketTravelDAO.swift in Sources */,
 				883ADBE72432DE8C00308AC8 /* AppDelegate.swift in Sources */,
 				887EDDDC26781CE2001951C2 /* HomeViewController.swift in Sources */,
+				884CAB062679B2E20043825B /* User.swift in Sources */,
 				883ADBE92432DE8C00308AC8 /* SceneDelegate.swift in Sources */,
+				884CAB0426794E9F0043825B /* CheckIfUserLogIn.swift in Sources */,
 				887EDDE4267832DD001951C2 /* UserAccountCreateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

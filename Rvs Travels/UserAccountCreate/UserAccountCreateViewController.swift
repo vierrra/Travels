@@ -8,10 +8,12 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class createAccountUserViewController: UIViewController {
 
     @IBOutlet weak var emailTextField:           UITextField!
+    @IBOutlet weak var nameTextField:            UITextField!
     @IBOutlet weak var passwordTextField:        UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var accountCreateButton:      UIButton!
@@ -30,36 +32,46 @@ class createAccountUserViewController: UIViewController {
     }
     
     private func createAccountUser() {
-        guard let email = emailTextField.text, let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text else { return }
+        guard let email = emailTextField.text, let name = nameTextField.text, let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text else { return }
         
         if password == confirmPassword {
-            let createUser = Auth.auth()
-            
-            createUser.createUser(withEmail: email, password: password, completion: {(user, error) in
+            if name != "" {
+                let createUser = Auth.auth()
                 
-                if error == nil {
-                    self.performSegue(withIdentifier: "accountCreateSegue", sender: nil)
-                } else {
-                    let errorRecovery = error?.localizedDescription
-                    var errorMessage  = ""
-                    
-                    switch errorRecovery {
-                        case "The email address is badly formatted.":
-                            errorMessage = "Email inválido, insira um email válido."
+                createUser.createUser(withEmail: email, password: password, completion: {(user, error) in
+                
+                    if error == nil {
+                        let dataBase = Database.database().reference()
+                        let users    = dataBase.child("users")
+                        let dataUsers = ["name": name, "email": email]
                         
-                        case "The password must be 6 characters long or more.":
-                            errorMessage = "A senha tem que ter no mínimo 6 caracteres."
+                        users.child((user?.user.uid)!).setValue(dataUsers)
                         
-                        case "The email address is already in use by another account.":
-                            errorMessage = "Este email está sendo usado por outro usuário."
+                        self.performSegue(withIdentifier: "accountCreateSegue", sender: nil)
+                    } else {
+                        let errorRecovery = error?.localizedDescription
+                        var errorMessage  = ""
                         
-                        default:
-                            Alert(controller: self).showAlert(title: "Aviso", message: "Entrada dos dados estão incorretas")
+                        switch errorRecovery {
+                            case "The email address is badly formatted.":
+                                errorMessage = "Email inválido, insira um email válido."
+                            
+                            case "The password must be 6 characters long or more.":
+                                errorMessage = "A senha tem que ter no mínimo 6 caracteres."
+                            
+                            case "The email address is already in use by another account.":
+                                errorMessage = "Este email está sendo usado por outro usuário."
+                            
+                            default:
+                                Alert(controller: self).showAlert(title: "Aviso", message: "Entrada dos dados estão incorretas")
+                        }
+                        Alert(controller: self).showAlert(title: "Aviso", message: errorMessage)
                     }
-                    Alert(controller: self).showAlert(title: "Aviso", message: errorMessage)
-                }
-                
-            })
+                    
+                })
+            } else {
+                Alert(controller: self).showAlert(title: "Aviso", message: "Campo nome é obrigatório")
+            }
         } else {
             Alert(controller: self).showAlert(title: "Aviso", message: "Senhas são diferentes")
         }

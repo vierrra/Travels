@@ -15,19 +15,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var enterButton:       UIButton!
     
-//    let email    = "vierrra@hotmail.com"
-//    let password = "123"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         configureButton()
         setSecurityAndEntryOfFields()
     }
     
     @IBAction func enterButtonAction(_ sender: Any) {
+        self.configureStatusButton()
         self.login()
     }
     
@@ -65,6 +63,10 @@ class LoginViewController: UIViewController {
     private func configureButton() {
         enterButton.layer.cornerRadius = 10
         enterButton.layer.borderWidth  = 1
+    }
+    
+    func configureStatusButton() {
+        enterButton.setTitle("Aguarde....", for: .normal)
     }
     
     private func setSecurityAndEntryOfFields() {
